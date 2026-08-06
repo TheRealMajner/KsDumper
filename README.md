@@ -1,8 +1,16 @@
 # KsDumper
 
-![Demo](https://i.imgur.com/6XyMDxa.gif)
+<img width="717" alt="KsDumper Client" src="https://github.com/user-attachments/assets/e3e17012-2ebc-416b-ae5a-ac253f8a4e95" />
 
 A Windows kernel-level process memory dumper with a GUI client and an MCP (Model Context Protocol) server for AI-assisted reverse engineering.
+
+<img width="2014" alt="Process View" src="https://github.com/user-attachments/assets/e9219531-899e-4837-9c63-770dd769aebc" />
+
+<img width="1966" alt="Memory Tools" src="https://github.com/user-attachments/assets/986702d0-3818-48ae-a5eb-23e41ebcc0fd" />
+
+<img width="2039" alt="Analysis Tools" src="https://github.com/user-attachments/assets/fe0f2c7f-f7bd-4188-a7b3-c2e0911808df" />
+
+<img width="2046" alt="MCP Server" src="https://github.com/user-attachments/assets/e96bd7f8-3989-467c-ae98-cbbaa86b422e" />
 
 ## Features
 
