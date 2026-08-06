@@ -1,0 +1,79 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>KsMcpServer</RootNamespace>
+    <AssemblyName>KsMcpServer</AssemblyName>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ModelContextProtocol" Version="1.4.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.0" />
+  </ItemGroup>
+
+  <!-- Shared driver and utility files from KsDumperClient -->
+  <ItemGroup>
+    <Compile Include="..\KsDumperClient\Driver\IMemoryReader.cs" Link="Shared\IMemoryReader.cs" />
+    <Compile Include="..\KsDumperClient\Driver\DriverInterface.cs" Link="Shared\DriverInterface.cs" />
+    <Compile Include="..\KsDumperClient\Driver\UserModeInterface.cs" Link="Shared\UserModeInterface.cs" />
+    <Compile Include="..\KsDumperClient\Driver\Operations.cs" Link="Shared\Operations.cs" />
+    <Compile Include="..\KsDumperClient\Utility\WinApi.cs" Link="Shared\WinApi.cs" />
+    <Compile Include="..\KsDumperClient\Utility\MarshalUtility.cs" Link="Shared\MarshalUtility.cs" />
+    <Compile Include="..\KsDumperClient\Utility\Logger.cs" Link="Shared\Logger.cs" />
+    <Compile Include="..\KsDumperClient\ProcessSummary.cs" Link="Shared\ProcessSummary.cs" />
+    <Compile Include="..\KsDumperClient\ModuleSummary.cs" Link="Shared\ModuleSummary.cs" />
+    <Compile Include="..\KsDumperClient\Utility\Il2CppDumper.cs" Link="Shared\Il2CppDumper.cs" />
+    <Compile Include="..\KsDumperClient\DotNet\CliHeader.cs" Link="Shared\CliHeader.cs" />
+    <Compile Include="..\KsDumperClient\DotNet\MetadataTables.cs" Link="Shared\MetadataTables.cs" />
+    <Compile Include="..\KsDumperClient\DotNet\DotNetDeobfuscator.cs" Link="Shared\DotNetDeobfuscator.cs" />
+    <Compile Include="..\KsDumperClient\DotNet\RuntimeDeobfuscator.cs" Link="Shared\RuntimeDeobfuscator.cs" />
+    <Compile Include="..\KsDumperClient\Utility\Il2CppSdkGenerator.cs" Link="Shared\Il2CppSdkGenerator.cs" />
+    <Compile Include="..\KsDumperClient\Utility\Il2CppGhidraScript.cs" Link="Shared\Il2CppGhidraScript.cs" />
+    <Compile Include="..\KsDumperClient\Utility\Il2CppRuntimeResolver.cs" Link="Shared\Il2CppRuntimeResolver.cs" />
+    <Compile Include="..\KsDumperClient\Utility\Il2CppXrefGraph.cs" Link="Shared\Il2CppXrefGraph.cs" />
+    <Compile Include="..\KsDumperClient\Utility\Il2CppStubGenerator.cs" Link="Shared\Il2CppStubGenerator.cs" />
+    <Compile Include="..\KsDumperClient\Utility\UnityAssetBundleParser.cs" Link="Shared\UnityAssetBundleParser.cs" />
+    <Compile Include="..\KsDumperClient\Utility\MonoILDisassembler.cs" Link="Shared\MonoILDisassembler.cs" />
+    <Compile Include="..\KsDumperClient\Utility\Il2CppMetadataDecryptor.cs" Link="Shared\Il2CppMetadataDecryptor.cs" />
+    <Compile Include="..\KsDumperClient\Utility\MonoAssemblyPatcher.cs" Link="Shared\MonoAssemblyPatcher.cs" />
+    <Compile Include="..\KsDumperClient\Utility\ReClassExporter.cs" Link="Shared\ReClassExporter.cs" />
+    <Compile Include="..\KsDumperClient\Utility\MonoSdkGenerator.cs" Link="Shared\MonoSdkGenerator.cs" />
+    <Compile Include="..\KsDumperClient\Utility\BeebyteDumper.cs" Link="Shared\BeebyteDumper.cs" />
+    <Compile Include="..\KsDumperClient\Utility\Il2CppCodeRegistration.cs" Link="Shared\Il2CppCodeRegistration.cs" />
+    <Compile Include="..\KsDumperClient\Utility\FridaScriptGenerator.cs" Link="Shared\FridaScriptGenerator.cs" />
+    <Compile Include="..\KsDumperClient\Utility\Il2CppStringLiteralDumper.cs" Link="Shared\Il2CppStringLiteralDumper.cs" />
+    <Compile Include="..\KsDumperClient\Utility\UnitySceneWalker.cs" Link="Shared\UnitySceneWalker.cs" />
+    <Compile Include="..\KsDumperClient\Utility\Il2CppGenericResolver.cs" Link="Shared\Il2CppGenericResolver.cs" />
+    <Compile Include="..\KsDumperClient\Utility\AntiCheatDetector.cs" Link="Shared\AntiCheatDetector.cs" />
+    <Compile Include="..\KsDumperClient\Utility\Il2CppNativeDisassembler.cs" Link="Shared\Il2CppNativeDisassembler.cs" />
+    <Compile Include="..\KsDumperClient\Utility\MonoRuntimeResolver.cs" Link="Shared\MonoRuntimeResolver.cs" />
+    <Compile Include="..\KsDumperClient\Utility\Il2CppTypeInfoDumper.cs" Link="Shared\Il2CppTypeInfoDumper.cs" />
+    <Compile Include="..\KsDumperClient\Utility\MonoJitTableExtractor.cs" Link="Shared\MonoJitTableExtractor.cs" />
+    <Compile Include="..\KsDumperClient\Utility\Il2CppMetadataUsageParser.cs" Link="Shared\Il2CppMetadataUsageParser.cs" />
+    <Compile Include="..\KsDumperClient\Utility\PEImportReconstructor.cs" Link="Shared\PEImportReconstructor.cs" />
+    <Compile Include="..\KsDumperClient\Utility\Il2CppInstanceScanner.cs" Link="Shared\Il2CppInstanceScanner.cs" />
+    <Compile Include="..\KsDumperClient\Utility\UnityMethodTracer.cs" Link="Shared\UnityMethodTracer.cs" />
+    <Compile Include="..\KsDumperClient\Utility\Il2CppDelegateResolver.cs" Link="Shared\Il2CppDelegateResolver.cs" />
+    <Compile Include="..\KsDumperClient\Utility\DumpProfile.cs" Link="Shared\DumpProfile.cs" />
+    <Compile Include="..\KsDumperClient\Utility\MemorySnapshotDiff.cs" Link="Shared\MemorySnapshotDiff.cs" />
+    <Compile Include="..\KsDumperClient\Utility\AutoSignatureGenerator.cs" Link="Shared\AutoSignatureGenerator.cs" />
+    <Compile Include="..\KsDumperClient\Utility\Il2CppInterfaceOffsetDumper.cs" Link="Shared\Il2CppInterfaceOffsetDumper.cs" />
+    <Compile Include="..\KsDumperClient\Utility\ProtobufDetector.cs" Link="Shared\ProtobufDetector.cs" />
+    <Compile Include="..\KsDumperClient\Utility\MethodPatchGenerator.cs" Link="Shared\MethodPatchGenerator.cs" />
+    <Compile Include="..\KsDumperClient\Utility\PointerScanEngine.cs" Link="Shared\PointerScanEngine.cs" />
+    <Compile Include="..\KsDumperClient\Utility\Il2CppAttributeExtractor.cs" Link="Shared\Il2CppAttributeExtractor.cs" />
+    <Compile Include="..\KsDumperClient\Utility\UnityPlayerPrefsDumper.cs" Link="Shared\UnityPlayerPrefsDumper.cs" />
+    <Compile Include="..\KsDumperClient\Utility\Il2CppVtableHookDetector.cs" Link="Shared\Il2CppVtableHookDetector.cs" />
+    <Compile Include="..\KsDumperClient\Utility\UnityObjectHierarchyDumper.cs" Link="Shared\UnityObjectHierarchyDumper.cs" />
+    <Compile Include="..\KsDumperClient\Utility\Il2CppEnumResolver.cs" Link="Shared\Il2CppEnumResolver.cs" />
+    <Compile Include="..\KsDumperClient\Utility\MemoryWatchpointEngine.cs" Link="Shared\MemoryWatchpointEngine.cs" />
+    <Compile Include="..\KsDumperClient\Utility\Il2CppGenericInstDumper.cs" Link="Shared\Il2CppGenericInstDumper.cs" />
+    <Compile Include="..\KsDumperClient\Utility\BinaryDiffPatcher.cs" Link="Shared\BinaryDiffPatcher.cs" />
+    <Compile Include="..\KsDumperClient\Utility\Il2CppStaticFieldReader.cs" Link="Shared\Il2CppStaticFieldReader.cs" />
+    <Compile Include="..\KsDumperClient\Utility\UnityAssetReferenceMapper.cs" Link="Shared\UnityAssetReferenceMapper.cs" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "ksdumper": {
+      "command": "C:\\Users\\Lukas\\Downloads\\KsDumper-master(1)\\KsDumper-master\\KsMcpServer\\bin\\Release\\net8.0\\KsMcpServer.exe",
+      "args": [],
+      "env": {}
+    }
+  }
+}
